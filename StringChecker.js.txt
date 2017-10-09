@@ -1,3 +1,0 @@
-var site = document.documentElement.innerHTML;
-var regex = "https://example-string.com/";
-site.match(regex);
