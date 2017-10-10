@@ -1,9 +1,16 @@
 
+
+
+
+//click Join Now
+var button = document.body.querySelector(".joinnowbutton, a");
+
 ///credential generator
-var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-var string = '';
-var username = '';
-var password = '';
+  var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+  var string = '';
+  var username = '';
+  var password = '';
+
 for(var ii=0; ii<8; ii++){
      username += "a" + chars[Math.floor(Math.random() * chars.length)];
      password += chars[Math.floor(Math.random() * chars.length)];
