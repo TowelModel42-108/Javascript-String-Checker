@@ -91,17 +91,17 @@ for(var ii=0; ii<8; ii++){
  console.log("Password:" + password)
 ///
 
+
 //////auto-fill the form and hit submit button
-document.getElementById('join').value = 'foo';
-document.getElementById('login_form').submit();
-********
+var login = [username, password, email];
+var queries = ['#username','#password', '#email']
 
 
 ///loop through form elements and write "foo" in each field
-var formElements = document.getElementsbyTagName('input');
+var formElements = document.getElementsByTagName('input');
 
-for (var i=0; i< formElements.length; i++){
-	formElements[i].value = "foo";
+for (var i=0; i< queries.length; i++){
+	document.querySelector(queries[i]).value = login[i];
 }
 
-*****
+document.getElementById("btnSubmit").click()
