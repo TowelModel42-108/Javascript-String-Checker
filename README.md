@@ -1,6 +1,6 @@
 
-# Javascript-QA Script (formerly a string checker)
-A small tool for checking strings in an HTML page.
+# Javascript-QA Script ToolKit (formerly a string checker)
+A QA toolkit for websites and webapps using login info with the correct querySelectors, intended for internal use. 
 
 Currently, it simply takes the current webpage and matches the "regex" variable to the HTML returned by the first line.
 

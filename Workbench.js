@@ -2,7 +2,7 @@
 CURRENT ITERATION:
 
 var site = document.documentElement.innerHTML;
-var regex = "https://join-hits.teamskeet.com/";
+var regex = "http://example.com/";
 site.match(regex)
 
 
