@@ -63,32 +63,32 @@ for(var ii=0; ii<8; ii++){
 
 //////email randomizer code from stackoverflow
 var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-var string = '';
 for(var ii=0; ii<8; ii++){
-     string += chars[Math.floor(Math.random() * chars.length)];
 }
-var email = (string + '@domain.com');
-console.log("Email:" + email)
 ////
 
 
-///////username generator
+///////credential generator
 var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
 var username = '';
+var password = '';
+var string = '';
 for(var ii=0; ii<8; ii++){
-     username += chars[Math.floor(Math.random() * chars.length)];
+     username += "a" + chars[Math.floor(Math.random() * chars.length)];
+     password += chars[Math.floor(Math.random() * chars.length)];
+     string += chars[Math.floor(Math.random() * chars.length)];
 }
+var email = (string + '@domain.com');
  console.log("Username:" + username)
+ console.log("Password:" + password)
+ console.log("Email:" + email)
 ///
 
 
 ////password generator
 var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-var password = '';
 for(var ii=0; ii<8; ii++){
-     password += chars[Math.floor(Math.random() * chars.length)];
 }
- console.log("Password:" + password)
 ///
 
 
@@ -97,11 +97,12 @@ var login = [username, password, email];
 var queries = ['#username','#password', '#email']
 
 
-///loop through form elements and write "foo" in each field
-var formElements = document.getElementsByTagName('input');
+///loop through form elements and populate them with generated data
 
 for (var i=0; i< queries.length; i++){
 	document.querySelector(queries[i]).value = login[i];
 }
 
 document.getElementById("btnSubmit").click()
+
+var formElements = document.getElementsByTagName('input');
