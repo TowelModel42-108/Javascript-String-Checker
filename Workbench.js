@@ -35,11 +35,11 @@ xhr.send();
 /////
 
 ///Receiving an HTTP request
-var regex = "https://join-hits.teamskeet.com/"
+var regex = "http://example.com/"
 function checkAjax(){
 var xhr = new XMLHttpRequest();
 
-xhr.onload = function("https://join.teensloveblackcocks.com/signup/signup.php?step=signup&nats=NDA2Ni42OC42NC41ODIuMC4wLjAuMC4w&switched=1&strack=0&tpl=join_mobile") {
+xhr.onload = function("http://example.com/") {
 
 console.log(this.responseXML.title);
 }
@@ -65,7 +65,12 @@ for(var ii=0; ii<8; ii++){
 var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
 for(var ii=0; ii<8; ii++){
 }
-////
+//////travel to specified URL
+window.location.href = URL;
+var formElements = document.getElementsByTagName('input');
+
+////click on "Join" from Tour
+
 
 
 ///////credential generator
