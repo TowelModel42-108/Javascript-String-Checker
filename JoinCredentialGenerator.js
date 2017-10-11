@@ -1,37 +1,63 @@
+//TeamSkeet.com Join Now button grab and click
+  var joinButton = document.body.querySelector(".joinnowbutton, a");
 
-
-
-
-//click Join Now
-var button = document.body.querySelector(".joinnowbutton, a");
-
-///credential generator
+//credentials
   var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
-  var string = '';
+  var email = '';
   var username = '';
   var password = '';
+  var string = '';
 
-for(var ii=0; ii<8; ii++){
-     username += "a" + chars[Math.floor(Math.random() * chars.length)];
-     password += chars[Math.floor(Math.random() * chars.length)];
-     string += chars[Math.floor(Math.random() * chars.length)];
-}
-var email = (string + '@domain.com');
+//form fields
+  var login = [username, password, email];
+  var queries = ['#username','#password', '#email'];
+
+//Join page Create Button element
+  var createButton = document.getElementById("btnSubmit");
+
+//functions
+  function waitLoad(Skeet){
+    while (createButton === false){
+      console.log("Waiting for load.")
+    }
+    if (createButton != undefined){
+      console.log("Yo, that shit is loaded.")
+      window.onload(skeet)
+  }
+
+  function generateCreds(){
+    for(var ii=0; ii<8; ii++){
+        username += chars[Math.floor(Math.random() * chars.length)];
+        password += chars[Math.floor(Math.random() * chars.length)];
+        string += chars[Math.floor(Math.random() * chars.length)];
+      }
+      email = "a" + string + "@domain.com";
+    }
+
+    function displayCreds()
+    {
+      console.log("Username:" + username);
+      console.log("Password:" + password);
+      console.log("Email:" + email);
+    }
+
+  function populateForm(queries, login){
+    for (var i=0; i< queries.length; i++){
+      document.querySelector(queries[i]).value = login[i];
+    }
+  }
 
 
+///control flow
+joinButton.click();
 
-//display in console
-console.log("Username:" + username)
-console.log("Password:" + password)
-console.log("Email:" + email)
+waitLoad();
+
+generateCreds();
+displayCreds();
+populateForm(queries, login);
+
+createButton.click();
 
 //populate form fields
-var login = [username, password, email];
-var queries = ['#username','#password', '#email']
-
-for (var i=0; i< queries.length; i++){
-  document.querySelector(queries[i]).value = login[i];
-}
-
 //click "Create"
-document.getElementById("btnSubmit").click();
