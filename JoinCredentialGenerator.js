@@ -9,21 +9,22 @@
   var string = '';
 
 //form fields
-  var login = [username, password, email];
+  var login = [];
   var queries = ['#username','#password', '#email'];
 
 //Join page Create Button element
   var createButton = document.getElementById("btnSubmit");
 
 //functions
-  function waitLoad(Skeet){
+  function waitLoad(){
     while (createButton === false){
       console.log("Waiting for load.")
     }
     if (createButton != undefined){
-      console.log("Yo, that shit is loaded.")
-      window.onload(skeet)
+      console.log("Yo, that shit button is loaded.");
+      window.onload(console.log("Page Fully Loaded"));
   }
+}
 
   function generateCreds(){
     for(var ii=0; ii<8; ii++){
@@ -31,7 +32,9 @@
         password += chars[Math.floor(Math.random() * chars.length)];
         string += chars[Math.floor(Math.random() * chars.length)];
       }
-      email = "a" + string + "@domain.com";
+      // username = "a" + string;
+      email = "a" + string + "@domain.com"
+      login = [username, password, email];
     }
 
     function displayCreds()
@@ -48,7 +51,7 @@
   }
 
 
-///control flow
+///control
 joinButton.click();
 
 waitLoad();
